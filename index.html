@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rem ― 海底の荒野</title>
+<meta name="description" content="はるか昔、突如として海が消えていった。干上がった海の底の荒野を舞台に、水を涸らす「厄災」と、それを封じる白い銃「Rem」をめぐる RPG。Steam 向けに開発中。">
+<meta property="og:title" content="Rem ― 海底の荒野">
+<meta property="og:description" content="なぜ、Rem だけが厄災を封じられるのか――。Steam 向けに開発中の RPG。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080c; --bg2:#0a1118; --panel:#0e1821; --line:#1d2c38;
+  --text:#e6e0d2; --sub:#9aa7b0; --teal:#7fe8d8; --teal-d:#3fb8aa; --ivory:#f3ead6;
+  --mincho:'Shippori Mincho B1','Yu Mincho','YuMincho',serif;
+  --sans:'Noto Sans JP',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:var(--teal)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ---- ナビ ---- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;transition:background .3s}
+.nav.solid{background:rgba(5,8,12,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav img{height:34px;width:auto;opacity:0;transition:opacity .3s}
+.nav.solid img{opacity:1}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav a{color:var(--text);text-decoration:none;font-size:.86rem;letter-spacing:.12em}
+.nav a:hover{color:var(--teal)}
+@media (max-width:720px){.nav ul{display:none}}
+
+/* ---- 一枚目 ---- */
+.hero{position:relative;height:100svh;min-height:600px;display:grid;place-items:center;text-align:center;overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,8,12,.25),rgba(5,8,12,.82) 75%),linear-gradient(to bottom,rgba(5,8,12,.2),var(--bg) 98%)}
+.hero .in{position:relative;z-index:2;padding:0 20px}
+.hero .logo{width:min(620px,86vw);margin:0 auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.7))}
+.hero .place{font-family:var(--mincho);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.4rem);letter-spacing:.5em;margin:8px 0 0 .5em;color:var(--ivory)}
+.hero .lead{font-family:var(--mincho);color:var(--sub);margin-top:18px;letter-spacing:.18em;font-size:clamp(.95rem,2vw,1.1rem)}
+@media (max-width:480px){.hero .lead{letter-spacing:.06em}.hero .place{letter-spacing:.35em}}
+.hero .lead,.beat .q,.closing .ask{text-wrap:balance}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border:1px solid var(--teal);color:var(--teal);text-decoration:none;letter-spacing:.14em;font-size:.92rem;border-radius:2px;background:rgba(5,8,12,.5);transition:background .25s,color .25s}
+.btn:hover{background:var(--teal);color:var(--bg)}
+.btn.ghost{border-color:#56646d;color:var(--sub);cursor:default}
+.btn.ghost:hover{background:rgba(5,8,12,.5);color:var(--sub)}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:54px;background:linear-gradient(var(--teal),transparent);animation:drop 2.2s infinite}
+@keyframes drop{0%{transform:translateX(-50%) scaleY(0);transform-origin:top}50%{transform:translateX(-50%) scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:translateX(-50%) scaleY(0);transform-origin:bottom}}
+
+/* ---- 見出し ---- */
+section{padding:120px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.42em;color:var(--teal);text-transform:uppercase}
+h2{font-family:var(--mincho);font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:.12em;margin:10px 0 40px;color:var(--ivory);line-height:1.5}
+h2::after{content:"";display:block;width:64px;height:2px;background:var(--teal);margin-top:18px}
+h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.08em;color:var(--ivory)}
+
+/* ---- PV ---- */
+#pv{padding-top:40px}
+.pv{position:relative;aspect-ratio:16/9;background:#000 center/cover;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv .soon{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,8,12,.55);font-family:var(--mincho);letter-spacing:.3em;color:var(--ivory);font-size:1.1rem;text-align:center}
+.pv .soon small{display:block;font-family:var(--sans);letter-spacing:.1em;color:var(--sub);font-size:.8rem;margin-top:6px}
+
+/* ---- 世界（大きな絵と文を交互に） ---- */
+.story{display:grid;gap:110px}
+.beat{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.beat:nth-child(even){grid-template-columns:1fr 1.25fr}
+.beat:nth-child(even) .pic{order:2}
+.pic{position:relative;overflow:hidden;border:1px solid var(--line)}
+.pic img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 1.2s}
+.pic:hover img{transform:scale(1.03)}
+.beat p{color:var(--text)}
+.beat .q{font-family:var(--mincho);font-weight:800;font-size:clamp(1.3rem,2.6vw,1.75rem);color:var(--ivory);letter-spacing:.06em;line-height:1.7;margin-bottom:18px}
+@media (max-width:820px){.beat,.beat:nth-child(even){grid-template-columns:1fr;gap:24px}.beat:nth-child(even) .pic{order:0}}
+
+/* ---- Rem ---- */
+.rem{position:relative;background:var(--bg2);overflow:hidden}
+.rem .bg{position:absolute;inset:0;background:url(assets/img/gun.jpg) center/cover;opacity:.55}
+.rem .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg2) 8%,rgba(10,17,24,.55) 55%,rgba(10,17,24,.2))}
+.rem .wrap{position:relative;min-height:560px;display:flex;flex-direction:column;justify-content:center}
+.rem .txt{max-width:520px}
+.rem .voice{font-family:var(--mincho);color:var(--teal);font-size:1.5rem;letter-spacing:.2em;margin-top:28px;text-shadow:0 0 18px rgba(127,232,216,.5)}
+
+/* ---- キャラクター ---- */
+.chars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.char{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+.char .ph{overflow:hidden}
+.char img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1s}
+.char:hover img{transform:scale(1.04)}
+.char .body{padding:22px 22px 26px}
+.char .role{font-size:.78rem;letter-spacing:.3em;color:var(--teal)}
+.char h3{font-size:1.8rem;margin:2px 0 12px}
+.char .line{font-family:var(--mincho);color:var(--ivory);border-left:2px solid var(--teal);padding-left:12px;margin-bottom:12px;font-size:1.02rem;line-height:1.7}
+.char p{color:var(--sub);font-size:.92rem}
+@media (max-width:900px){.chars{grid-template-columns:1fr}.char img{aspect-ratio:16/10}}
+.meet{margin-top:70px}
+.meet h3{font-size:1.15rem;margin-bottom:18px;letter-spacing:.2em}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio figure{position:relative;overflow:hidden;border:1px solid var(--line)}
+.trio img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.9)}
+.trio figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;background:linear-gradient(transparent,rgba(5,8,12,.9));font-size:.85rem;letter-spacing:.14em;color:var(--ivory)}
+@media (max-width:720px){.trio{grid-template-columns:1fr}}
+
+/* ---- システム ---- */
+.sys{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.feat{background:var(--panel);border:1px solid var(--line)}
+.feat img{width:100%;aspect-ratio:4/3;object-fit:cover;image-rendering:pixelated;border-bottom:1px solid var(--line)}
+.feat .body{padding:20px 22px 24px}
+.feat h3{font-size:1.2rem;margin-bottom:8px}
+.feat p{color:var(--sub);font-size:.92rem}
+@media (max-width:820px){.sys{grid-template-columns:1fr}}
+
+/* ---- 締め ---- */
+.closing{position:relative;text-align:center;padding:170px 0;overflow:hidden}
+.closing .bg{position:absolute;inset:0;background:url(assets/img/seal.jpg) center/cover;opacity:.45}
+.closing .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,8,12,.35),var(--bg) 78%)}
+.closing .in{position:relative}
+.closing .ask{font-family:var(--mincho);font-weight:800;font-size:clamp(1.3rem,3.4vw,2.2rem);letter-spacing:.12em;color:var(--ivory);line-height:1.7}
+.closing .logo{width:min(420px,70vw);margin:46px auto 0}
+.closing .place{font-family:var(--mincho);letter-spacing:.5em;color:var(--sub);margin-left:.5em}
+
+footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--sub);font-size:.8rem;text-align:center;line-height:2}
+
+/* ---- ふわっと出す ---- */
+.fx{opacity:0;transform:translateY(26px);transition:opacity 1s,transform 1s}
+.fx.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.fx{opacity:1;transform:none;transition:none}.scroll{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" aria-label="ページの先頭へ"><img src="assets/img/logo.png" alt="Rem"></a>
+  <ul>
+    <li><a href="#pv">PV</a></li>
+    <li><a href="#world">世界</a></li>
+    <li><a href="#rem">Rem</a></li>
+    <li><a href="#characters">キャラクター</a></li>
+    <li><a href="#system">システム</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <img class="poster" src="assets/img/hero.jpg" alt="">
+  <video autoplay muted loop playsinline poster="assets/img/hero.jpg" aria-hidden="true">
+    <source src="assets/video/hero_loop.mp4" type="video/mp4">
+  </video>
+  <div class="in">
+    <h1><img class="logo" src="assets/img/logo.png" alt="Rem"></h1>
+    <p class="place">海底の荒野</p>
+    <p class="lead">はるか昔、突如として海が消えていった。</p>
+    <div class="cta">
+      <a class="btn" href="#pv">▶ PV を見る</a>
+      <span class="btn ghost" aria-disabled="true">Steam ウィッシュリスト（準備中）</span>
+    </div>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</header>
+
+<main>
+  <section id="pv">
+    <div class="wrap fx">
+      <p class="eyebrow">Promotion Video</p>
+      <h2>プロモーション映像</h2>
+      <div class="pv" id="pvbox" style="background-image:url(assets/img/chase.jpg)">
+        <div class="soon">PV 公開準備中<small>まもなく公開します</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="world">
+    <div class="wrap">
+      <p class="eyebrow fx">World</p>
+      <h2 class="fx">干上がった海の、その底で。</h2>
+      <div class="story">
+        <div class="beat fx">
+          <div class="pic"><img src="assets/img/sea.jpg" alt="海が引いていき、船が砂の上に取り残される" loading="lazy"></div>
+          <div>
+            <p class="q">はるか昔、<br>突如として海が消えていった。</p>
+            <p>残されたのは、どこまでも続く白い砂と、座礁した船の群れ。人々はかつての海の底に町を作り、わずかな井戸の水を分け合って暮らしてきた。</p>
+          </div>
+        </div>
+        <div class="beat fx">
+          <div class="pic"><img src="assets/img/well.jpg" alt="空の桶が引き上げられる井戸と、見守る町の人々" loading="lazy"></div>
+          <div>
+            <p class="q">水を失い、<br>滅びゆく町。</p>
+            <p>座礁船の町ヘイズ。井戸の水は日ごとに減り、引き上げた桶が空のまま戻ってくる日も近い。町の人々は、それを口に出さないようにしている。</p>
+          </div>
+        </div>
+        <div class="beat fx">
+          <div class="pic"><img src="assets/img/chase.jpg" alt="巨大な岩の厄災に追われ、橋の上を逃げる3人" loading="lazy"></div>
+          <div>
+            <p class="q">水を涸らす元凶――<br>「厄災」</p>
+            <p>荒野のどこかで、水が消える。そこには決まって、人の手には負えない何かがいる。人々はそれを「厄災」と呼んで恐れてきた。</p>
+          </div>
+        </div>
+        <div class="beat fx">
+          <div class="pic"><img src="assets/img/water.jpg" alt="水が戻り、喜びにわく町の広場" loading="lazy"></div>
+          <div>
+            <p class="q">水を取り戻す旅が、<br>はじまる。</p>
+            <p>町を救う手がかりを求めて、救助屋見習いの少年は海の底の荒野へ踏み出す。仲間と力を合わせ、厄災に立ち向かうために。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rem" id="rem">
+    <div class="bg" role="img" aria-label="沈んだ神殿の台座で青く脈打つ白い銃"></div>
+    <div class="wrap">
+      <div class="txt fx">
+        <p class="eyebrow">Rem</p>
+        <h2>厄災を封じる、<br>白い銃。</h2>
+        <p>沈んだ神殿の台座に眠っていた、象牙色の大きな銃。少年が手にしたとき、銃身の細い線が青く脈打った。</p>
+        <p style="margin-top:14px">この銃の全力の一発だけが、厄災を光で包み、封じることができる。<br>――けれど、その理由を知る者はいない。</p>
+        <p class="voice">「――照合。」</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="characters">
+    <div class="wrap">
+      <p class="eyebrow fx">Characters</p>
+      <h2 class="fx">旅の仲間</h2>
+      <div class="chars">
+        <article class="char fx">
+          <div class="ph"><img src="assets/img/jin.jpg" alt="ジン" loading="lazy"></div>
+          <div class="body">
+            <p class="role">救助屋見習い</p>
+            <h3>ジン</h3>
+            <p class="line">「これは、町の水を戻すのに要るんだ。」</p>
+            <p>ヘイズの救助屋で働く見習い。生まれつき体に「糸」が流れず、救助屋の道具を使いこなせない。神殿で白い銃 Rem を手にする。</p>
+          </div>
+        </article>
+        <article class="char fx">
+          <div class="ph"><img src="assets/img/noel.jpg" alt="ノエル" loading="lazy"></div>
+          <div class="body">
+            <p class="role">魔法使い</p>
+            <h3>ノエル</h3>
+            <p class="line">「わたしは、レムに助けられたの。」</p>
+            <p>火・水・風・土、四本の「糸」を借りて、返す魔法使い。Rem のことを、誰よりも知りたがっている。</p>
+          </div>
+        </article>
+        <article class="char fx">
+          <div class="ph"><img src="assets/img/dario.jpg" alt="ダリオ" loading="lazy"></div>
+          <div class="body">
+            <p class="role">用心棒</p>
+            <h3>ダリオ</h3>
+            <p class="line">「名前を付けると、手放せなくなるぞ。」</p>
+            <p>宿の階段にいつも腰かけている無口な剣士。腕は確かだが、多くを語らない。なぜか、銃のことに詳しい。</p>
+          </div>
+        </article>
+      </div>
+      <div class="meet fx">
+        <h3>旅の先で出会う者たち</h3>
+        <div class="trio">
+          <figure><img src="assets/img/dancer.jpg" alt="隊商の野営地で踊る女性" loading="lazy"><figcaption>砂路の舞台で踊る者</figcaption></figure>
+          <figure><img src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><figcaption>灯籠をかかげる者</figcaption></figure>
+          <figure><img src="assets/img/rival.jpg" alt="白い外套の男とジンが斬り結ぶ" loading="lazy"><figcaption>白い外套の宿敵</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="system" style="background:var(--bg2)">
+    <div class="wrap">
+      <p class="eyebrow fx">System</p>
+      <h2 class="fx">3人で挑む、コマンドバトル</h2>
+      <div class="sys">
+        <div class="feat fx">
+          <img src="assets/img/game_command.jpg" alt="戦闘画面。左下に命令の窓、右下に3人の体力" loading="lazy">
+          <div class="body"><h3>ターン制のコマンドバトル</h3><p>撃つ・たたかう・技・道具・防御。ジン、ノエル、ダリオの3人に命令を出して戦う、じっくり考えるターン制の戦闘。</p></div>
+        </div>
+        <div class="feat fx">
+          <img src="assets/img/game_musubi.jpg" alt="ノエルとダリオのカットインと技の名前" loading="lazy">
+          <div class="body"><h3>連携技「結び断ち」</h3><p>ノエルの糸で敵を結び、ダリオが一体ずつ断ち切る。仲間の力をつなげる連携技が、戦況をひっくり返す。</p></div>
+        </div>
+        <div class="feat fx">
+          <img src="assets/img/game_threads.jpg" alt="金色の糸が敵を結ぶ戦闘画面" loading="lazy">
+          <div class="body"><h3>四本の糸の魔法</h3><p>厄災には、それぞれ苦手な「糸」がある。火・水・風・土を見きわめ、弱いところを突け。</p></div>
+        </div>
+        <div class="feat fx">
+          <img src="assets/img/game_field.jpg" alt="ドット絵の市場通りのフィールド" loading="lazy">
+          <div class="body"><h3>海の底の町を歩く</h3><p>座礁船を組み上げた町、塩の採掘場、沈んだ神殿。描き込まれたドット絵の世界を、3人で旅する。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="in wrap fx">
+      <p class="ask">なぜ、Rem だけが<br>厄災を封じられるのか――</p>
+      <img class="logo" src="assets/img/logo.png" alt="Rem">
+      <p class="place">海底の荒野</p>
+      <div class="cta">
+        <span class="btn ghost" aria-disabled="true">Steam ウィッシュリスト（準備中）</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Rem ― 海底の荒野 ｜ Windows（Steam）向けに開発中</p>
+    <p>画面は開発中のものです。</p>
+    <p>&copy; 2026 AppTalentHub</p>
+  </div>
+</footer>
+
+<script>
+// YouTube に PV を上げたら、動画の ID をここに入れる（例：'dQw4w9WgXcQ'）。空のあいだは「準備中」を出す
+const YOUTUBE_ID = '';
+(function () {
+  if (YOUTUBE_ID) {
+    const box = document.getElementById('pvbox');
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + YOUTUBE_ID +
+      '?rel=0" title="Rem プロモーション映像" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  }
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > window.innerHeight * 0.6);
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: 0.15 });
+    document.querySelectorAll('.fx').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.fx').forEach(el => el.classList.add('on'));
+  }
+})();
+</script>
+</body>
+</html>
