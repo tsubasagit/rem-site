@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/keyvisual.jpg" fetchpriority="high">
 <meta name="theme-color" content="#05080c">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoGame","name":"Rem ― 海底の荒野","alternateName":"Rem","url":"https://tsubasagit.github.io/rem-site/",
@@ -59,14 +59,16 @@ a{color:var(--teal)}
 }
 
 /* ---- 一枚目 ---- */
-.hero{position:relative;height:100svh;min-height:600px;display:grid;place-items:center;text-align:center;overflow:hidden}
-.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,8,12,.25),rgba(5,8,12,.82) 75%),linear-gradient(to bottom,rgba(5,8,12,.2),var(--bg) 98%)}
+.hero{position:relative;height:100svh;min-height:600px;display:grid;place-items:end center;text-align:center;overflow:hidden;padding-bottom:7vh}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:32% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,8,12,.35) 0%,rgba(5,8,12,0) 18%,rgba(5,8,12,0) 45%,rgba(5,8,12,.72) 74%,var(--bg) 99%)}
 .hero .in{position:relative;z-index:2;padding:0 20px}
-.hero .logo{width:min(620px,86vw);margin:0 auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.7))}
+.hero .logo{width:min(460px,72vw);margin:0 auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.8))}
 .hero .place{font-family:var(--mincho);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.4rem);letter-spacing:.5em;margin:8px 0 0 .5em;color:var(--ivory)}
 .hero .lead{font-family:var(--mincho);color:var(--sub);margin-top:18px;letter-spacing:.18em;font-size:clamp(.95rem,2vw,1.1rem)}
 @media (max-width:480px){.hero .lead{letter-spacing:.06em}.hero .place{letter-spacing:.35em}}
+/* 横に広い画面：キービジュアルの三人（左）を隠さないよう、文字は右に寄せる */
+@media (min-width:1100px){.hero{place-items:center end;padding:0 3vw 0 0}.hero .in{width:min(540px,36vw)}.hero::after{background:linear-gradient(to left,rgba(5,8,12,.82) 0%,rgba(5,8,12,.55) 30%,rgba(5,8,12,0) 58%),linear-gradient(to bottom,rgba(5,8,12,.3) 0%,rgba(5,8,12,0) 16%,rgba(5,8,12,0) 80%,var(--bg) 100%)}.hero .lead{letter-spacing:.1em}}
 .hero .lead,.beat .q,.closing .ask{text-wrap:balance}
 .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border:1px solid var(--teal);color:var(--teal);text-decoration:none;letter-spacing:.14em;font-size:.92rem;border-radius:2px;background:rgba(5,8,12,.5);transition:background .25s,color .25s}
@@ -218,10 +220,7 @@ footer .links a:hover{color:var(--teal)}
 </nav>
 
 <header class="hero" id="top">
-  <img width="1280" height="720" class="poster" src="assets/img/hero.jpg" alt="" fetchpriority="high">
-  <video autoplay muted loop playsinline poster="assets/img/hero.jpg" aria-hidden="true">
-    <source src="assets/video/hero_loop.mp4" type="video/mp4">
-  </video>
+  <img width="1672" height="941" class="poster" src="assets/img/keyvisual.jpg" alt="朝の海底の荒野を、座礁船の高台から見渡すジン・ノエル・ダリオ" fetchpriority="high">
   <div class="in">
     <h1><img width="1200" height="675" class="logo" src="assets/img/logo.png" alt="Rem"></h1>
     <p class="place">海底の荒野</p>
