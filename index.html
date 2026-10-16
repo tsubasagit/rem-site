@@ -203,6 +203,14 @@ h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.0
 .thr-wide li{font-size:.95rem;line-height:1.85;padding:8px 0;border-top:1px solid var(--line)}
 .thr-wide li b{color:var(--teal);font-weight:700;margin-right:.6em}
 @media (max-width:860px){.thr-wide{grid-template-columns:1fr}}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.how article{background:var(--panel);border:1px solid var(--line)}
+.how img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.how .body{padding:18px 20px 22px}
+.how h4{font-family:var(--mincho);font-size:1.15rem;margin-bottom:4px}
+.how .how-s{color:var(--teal);font-weight:700;font-size:.9rem;margin-bottom:10px}
+.how p{font-size:.92rem;line-height:1.85;opacity:.92}
+@media (max-width:900px){.how{grid-template-columns:1fr}}
 /* ---- 締め ---- */
 .closing{position:relative;text-align:center;padding:170px 0;overflow:hidden}
 .closing .bg{position:absolute;inset:0;background:url(assets/img/seal.jpg) center/cover;opacity:.45}
@@ -397,14 +405,14 @@ footer .links a:hover{color:var(--teal)}
         <div class="body">
           <h3>魔法だけじゃない、暮らしの糸</h3>
           <p>糸は、魔法使いのものだけではない。町の暮らしの道具にも、静かに通っている。自分の糸を通して使うのが、この世界の道具の「ふつう」。</p>
-          <ul>
-            <li><b>綱切り</b>息をはいて糸を刃先へ送ると、固い縄のほうからほどける。</li>
-            <li><b>呼び笛</b>糸を通して鳴らすと、遠くの仲間に音が届く。</li>
-            <li><b>網</b>編み手が、「ありがとう」の糸を一目ずつ編んで繕う。</li>
-          </ul>
           <p style="margin-top:14px">ごく簡単な糸の使い方なら、素質のある町の人でもできる。――ただし、糸が流れない者は、道具を手にしても使えない。</p>
         </div>
       </article>
+      <div class="how">
+        <article class="fx"><img width="1280" height="720" src="assets/img/how_tsunagiri.jpg" alt="救助屋の若者が、息をはいて金の糸を刃先へ送り、固い縄をほどいている" loading="lazy"><div class="body"><h4>綱切り</h4><p class="how-s">息にのせて、糸を刃先へ。</p><p>救助屋の短い刃物。息をはくように、握りから刃先へ糸を送ると、あてた所から固い縄の繊維がするりとほどける。力まかせに切るのではなく、糸で「ほどく」道具。</p></div></article>
+        <article class="fx"><img width="1280" height="720" src="assets/img/how_yobibue.jpg" alt="少女が呼び笛を吹くと、金の糸が荒野の向こうの仲間へ届く" loading="lazy"><div class="body"><h4>呼び笛</h4><p class="how-s">音が、糸にのって届く。</p><p>首から下げる小さな笛。糸を通して鳴らすと、音が金の糸をつたって、岩場や船の向こうにいる遠くの仲間の耳もとまで届く。救助の合図に使う。</p></div></article>
+        <article class="fx"><img width="1280" height="720" src="assets/img/how_ami.jpg" alt="町の人々の「ありがとう」が金の糸になり、編み手の網に編み込まれていく" loading="lazy"><div class="body"><h4>網</h4><p class="how-s">「ありがとう」を、一目ずつ。</p><p>町の人々の感謝の気持ちも、糸になる。編み手が、それを一目ずつ網に編み込んで繕う。繕った所は金色にほのかに光る。みんなで編む、町の網。</p></div></article>
+      </div>
     </div>
   </section>
 
