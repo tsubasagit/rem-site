@@ -182,6 +182,16 @@ h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.0
 @media (max-width:900px){.scenes{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.scenes{grid-template-columns:1fr}}
 
+/* ---- 糸の説明 ---- */
+.thr{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:38px}
+.thr .it{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+.thr .it img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.thr .it .body{padding:20px 22px 24px}
+.thr .it h3{font-family:var(--mincho);font-size:1.15rem;margin-bottom:8px}
+.thr .it p{font-size:.95rem;line-height:1.9;opacity:.9}
+.thr-lead{max-width:760px;margin:18px auto 0;text-align:center;line-height:2}
+@media (max-width:760px){.thr{grid-template-columns:1fr}}
+
 /* ---- 締め ---- */
 .closing{position:relative;text-align:center;padding:170px 0;overflow:hidden}
 .closing .bg{position:absolute;inset:0;background:url(assets/img/seal.jpg) center/cover;opacity:.45}
@@ -212,8 +222,9 @@ footer .links a:hover{color:var(--teal)}
     <li><a href="#world">世界</a></li>
     <li><a href="#rem">Rem</a></li>
     <li><a href="#characters">キャラクター</a></li>
+    <li><a href="#threads">糸</a></li>
     <li><a href="#places">舞台</a></li>
-    <li><a href="#scenes">シーン</a></li>
+    <li><a href="#scenes">映像</a></li>
     <li><a href="#system">システム</a></li>
     <li><a href="#about">ゲーム概要</a></li>
   </ul>
@@ -246,7 +257,7 @@ footer .links a:hover{color:var(--teal)}
       <div class="feats">
         <div class="ft fx"><p class="no">01</p><h3>海が消えた世界を、<br>3人で旅する物語</h3><p>干上がった海の底に生きる人々と、水を涸らす「厄災」。救助屋見習いの少年と仲間たちが、町に水を取り戻すため荒野を渡る、一本道の王道RPG。</p></div>
         <div class="ft fx"><p class="no">02</p><h3>仲間の力をつなぐ、<br>コマンドバトル</h3><p>撃つ・たたかう・技・道具。3人の役割を組み合わせ、連携技「結び断ち」や四本の糸の魔法で、厄災の弱いところを突く。</p></div>
-        <div class="ft fx"><p class="no">03</p><h3>描き込まれたドット絵と、<br>アニメーションの演出</h3><p>座礁船の町、塩の採掘場、沈んだ神殿。描き込まれたドット絵のフィールドと、物語の要所を彩るアニメーションで旅を描く。</p></div>
+        <div class="ft fx"><p class="no">03</p><h3>描き込まれたドット絵と、<br>物語を彩る一枚絵</h3><p>座礁船の町、塩の採掘場、沈んだ神殿。描き込まれたドット絵のフィールドと、物語の要所に入る一枚絵で旅を描く。</p></div>
       </div>
     </div>
   </section>
@@ -321,7 +332,7 @@ footer .links a:hover{color:var(--teal)}
             <p class="role">魔法使い</p>
             <h3>ノエル</h3>
             <p class="line">「わたしは、レムに助けられたの。」</p>
-            <p>火・水・風・土、四本の「糸」を借りて、返す魔法使い。Rem のことを、誰よりも知りたがっている。</p>
+            <p>火・水・風・土、四本の「糸」を借りて、返す魔法使い。Rem のことを、誰よりも知りたがっている。<a href="#threads" style="color:var(--teal);white-space:nowrap">糸とは？ ▸</a></p>
           </div>
         </article>
         <article class="char fx">
@@ -345,6 +356,21 @@ footer .links a:hover{color:var(--teal)}
     </div>
   </section>
 
+  <section id="threads" style="background:var(--bg2)">
+    <div class="wrap">
+      <p class="eyebrow fx">Threads</p>
+      <h2 class="fx">世界に流れる、「糸」</h2>
+      <p class="thr-lead fx">この世界の魔法は、「糸」から生まれる。<br>ノエルが旅の途中、ジンに話した言葉を、すこしだけ。</p>
+      <div class="thr">
+        <article class="it fx"><img width="1280" height="720" src="assets/img/ito_world.jpg" alt="世界を流れる、火・水・風・土の四色の糸" loading="lazy"><div class="body"><h3>火・水・風・土、四本の糸</h3><p>世界には、目に見えない「糸」が流れている。火の糸、水の糸、風の糸、土の糸。魔法使いは、その糸に触れて、形にする。</p></div></article>
+        <article class="it fx"><img width="1280" height="720" src="assets/img/ito_borrow.jpg" alt="糸を借りて、紡いで、返す魔法使い" loading="lazy"><div class="body"><h3>借りて、紡いで、返す</h3><p>糸はほんの少しだけ借りて、紡いで、使い終えたらほどいて返す。だから、水は作れない。あるところから借りて、動かすだけ。</p></div></article>
+        <article class="it fx"><img width="1280" height="720" src="assets/img/ito_jin.jpg" alt="糸がジンだけを避けて流れていく" loading="lazy"><div class="body"><h3>ジンには、糸が流れない</h3><p>生まれつき、少年の体には糸が流れない。救助屋の道具は、糸を通して使うものばかり。だから彼は、いつまでも「見習い」のまま。</p></div></article>
+        <article class="it fx"><img width="1280" height="720" src="assets/img/ito_net.jpg" alt="金色の糸で網を編む" loading="lazy"><div class="body"><h3>「ありがとう」も、一本の糸</h3><p>糸は、人の気持ちにも通っている。助けた人の「ありがとう」を一目ずつ編んだものが、救助屋の大きな網。</p></div></article>
+      </div>
+      <p class="thr-lead fx" style="margin-top:34px">そして、白い銃 Rem は、糸を紡がなくても撃てる古代の道具。<br>――どうして撃てるのかは、誰も知らない。</p>
+    </div>
+  </section>
+
   <section id="places" style="background:var(--bg2)">
     <div class="wrap">
       <p class="eyebrow fx">Places</p>
@@ -364,8 +390,9 @@ footer .links a:hover{color:var(--teal)}
 
   <section id="scenes">
     <div class="wrap">
-      <p class="eyebrow fx">Scenes</p>
-      <h2 class="fx">物語を彩る、アニメーション</h2>
+      <p class="eyebrow fx">Promotion Movie</p>
+      <h2 class="fx">物語の一幕を、映像で</h2>
+      <p class="fx" style="text-align:center;opacity:.7;font-size:.9rem;margin:-6px 0 22px">※ プロモーション用に制作した映像です。ゲーム内の演出ではありません。</p>
       <div class="scenes">
         <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_gun.jpg" aria-label="沈んだ神殿で、白い銃を手にする"><source src="assets/video/sc_gun.mp4" type="video/mp4"></video><figcaption>沈んだ神殿で、白い銃を手にする</figcaption></figure>
         <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_crab.jpg" aria-label="錆ガニに追われて"><source src="assets/video/sc_crab.mp4" type="video/mp4"></video><figcaption>錆ガニに追われて</figcaption></figure>
