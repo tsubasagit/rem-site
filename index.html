@@ -194,6 +194,15 @@ h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.0
 
 .thr.t3{grid-template-columns:repeat(3,1fr)}
 @media (max-width:900px){.thr.t3{grid-template-columns:1fr}}
+.thr-wide{display:grid;grid-template-columns:1.1fr 1fr;gap:0;margin-top:26px;background:var(--panel);border:1px solid var(--line)}
+.thr-wide img{display:block;width:100%;height:100%;object-fit:cover;min-height:260px}
+.thr-wide .body{padding:28px 30px}
+.thr-wide h3{font-family:var(--mincho);font-size:1.3rem;margin-bottom:12px}
+.thr-wide p{font-size:.95rem;line-height:1.9;opacity:.92}
+.thr-wide ul{list-style:none;margin:14px 0 0;padding:0}
+.thr-wide li{font-size:.95rem;line-height:1.85;padding:8px 0;border-top:1px solid var(--line)}
+.thr-wide li b{color:var(--teal);font-weight:700;margin-right:.6em}
+@media (max-width:860px){.thr-wide{grid-template-columns:1fr}}
 /* ---- 締め ---- */
 .closing{position:relative;text-align:center;padding:170px 0;overflow:hidden}
 .closing .bg{position:absolute;inset:0;background:url(assets/img/seal.jpg) center/cover;opacity:.45}
@@ -383,6 +392,19 @@ footer .links a:hover{color:var(--teal)}
         <article class="it fx"><img width="1280" height="720" src="assets/img/ito_jin.jpg" alt="糸がジンだけを避けて流れていく" loading="lazy"><div class="body"><h3>ジンには、糸が流れない</h3><p>生まれつき、少年の体には糸が流れない。救助屋の道具は、糸を通して使うものばかり。だから彼は、いつまでも「見習い」のまま。</p></div></article>
         <article class="it fx"><img width="1280" height="720" src="assets/img/ito_net.jpg" alt="金色の糸で網を編む" loading="lazy"><div class="body"><h3>「ありがとう」も、一本の糸</h3><p>糸は、人の気持ちにも通っている。助けた人の「ありがとう」を一目ずつ編んだものが、救助屋の大きな網。</p></div></article>
       </div>
+      <article class="thr-wide fx">
+        <img width="1280" height="720" src="assets/img/ito_daily.jpg" alt="市場通りの昼。綱切り、呼び笛、網の繕いに、ほのかな糸が通っている" loading="lazy">
+        <div class="body">
+          <h3>魔法だけじゃない、暮らしの糸</h3>
+          <p>糸は、魔法使いのものだけではない。町の暮らしの道具にも、静かに通っている。自分の糸を通して使うのが、この世界の道具の「ふつう」。</p>
+          <ul>
+            <li><b>綱切り</b>息をはいて糸を刃先へ送ると、固い縄のほうからほどける。</li>
+            <li><b>呼び笛</b>糸を通して鳴らすと、遠くの仲間に音が届く。</li>
+            <li><b>網</b>編み手が、「ありがとう」の糸を一目ずつ編んで繕う。</li>
+          </ul>
+          <p style="margin-top:14px">ごく簡単な糸の使い方なら、素質のある町の人でもできる。――ただし、糸が流れない者は、道具を手にしても使えない。</p>
+        </div>
+      </article>
     </div>
   </section>
 
