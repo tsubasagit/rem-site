@@ -135,15 +135,15 @@ h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.0
 /* ---- キャラクター ---- */
 .chars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .char{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
-.char .ph{overflow:hidden}
-.char img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1s}
-.char:hover img{transform:scale(1.04)}
+.char .ph{overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 38%,#1b3446 0%,#0e1821 62%,#0a1118 100%);border-bottom:1px solid var(--line)}
+.char img{display:block;width:100%;aspect-ratio:3/4.4;object-fit:contain;padding:18px 8px 0;transition:transform 1s;filter:drop-shadow(0 18px 22px rgba(0,0,0,.55))}
+.char:hover img{transform:scale(1.03)}
 .char .body{padding:22px 22px 26px}
 .char .role{font-size:.78rem;letter-spacing:.3em;color:var(--teal)}
 .char h3{font-size:1.8rem;margin:2px 0 12px}
 .char .line{font-family:var(--mincho);color:var(--ivory);border-left:2px solid var(--teal);padding-left:12px;margin-bottom:12px;font-size:1.02rem;line-height:1.7}
 .char p{color:var(--sub);font-size:.92rem}
-@media (max-width:900px){.chars{grid-template-columns:1fr}.char img{aspect-ratio:16/10}}
+@media (max-width:900px){.chars{grid-template-columns:1fr}.char img{aspect-ratio:3/3.6}}
 .meet{margin-top:70px}
 .meet h3{font-size:1.15rem;margin-bottom:18px;letter-spacing:.2em}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -343,7 +343,7 @@ footer .links a:hover{color:var(--teal)}
       <h2 class="fx">旅の仲間</h2>
       <div class="chars">
         <article class="char fx">
-          <div class="ph"><img width="640" height="800" src="assets/img/jin.jpg" alt="ジン" loading="lazy"></div>
+          <div class="ph"><img width="409" height="1100" src="assets/img/pose_jin.webp" alt="ジン の全身" loading="lazy"></div>
           <div class="body">
             <p class="role">救助屋見習い</p>
             <h3>ジン</h3>
@@ -352,7 +352,7 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
         <article class="char fx">
-          <div class="ph"><img width="640" height="800" src="assets/img/noel.jpg" alt="ノエル" loading="lazy"></div>
+          <div class="ph"><img width="515" height="1100" src="assets/img/pose_noel.webp" alt="ノエル の全身" loading="lazy"></div>
           <div class="body">
             <p class="role">魔法使い</p>
             <h3>ノエル</h3>
@@ -361,7 +361,7 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
         <article class="char fx">
-          <div class="ph"><img width="640" height="800" src="assets/img/dario.jpg" alt="ダリオ" loading="lazy"></div>
+          <div class="ph"><img width="526" height="1100" src="assets/img/pose_dario.webp" alt="ダリオ の全身" loading="lazy"></div>
           <div class="body">
             <p class="role">用心棒</p>
             <h3>ダリオ</h3>
