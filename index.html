@@ -262,6 +262,22 @@ footer .links a:hover{color:var(--teal)}
 .trio-art{border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
 .trio-art img{display:block;width:100%;height:auto}
 .trio-line{font-family:var(--mincho);text-align:center;color:var(--ivory);font-size:clamp(1.05rem,2.4vw,1.5rem);letter-spacing:.12em;line-height:1.9;margin-top:34px;text-wrap:balance}
+
+/* 2026-10-17 組み直し：行き先・もっと見る・折りたたみ */
+.nav-cta{border:1px solid var(--teal);color:var(--teal)!important;padding:8px 16px;border-radius:2px;letter-spacing:.14em}
+.nav-cta:hover{background:var(--teal);color:var(--bg)!important}
+@media (max-width:1240px){.nav ul .nav-cta{display:inline-block;margin:10px 24px 12px;padding:12px 22px}}
+.more-wrap[hidden]{display:none}
+.more-btn{display:block;margin:28px auto 0;padding:12px 34px;border:1px solid var(--line);background:none;color:var(--text);font-family:var(--sans);letter-spacing:.2em;font-size:.9rem;cursor:pointer;border-radius:2px;transition:border-color .2s,color .2s}
+.more-btn:hover{border-color:var(--teal);color:var(--teal)}
+#lore{padding-bottom:0}
+#lore > .wrap{text-align:center}
+#lore > .wrap h2::after{margin-left:auto;margin-right:auto}
+section{scroll-margin-top:72px}
+.lore-fold{margin-top:40px;border-top:1px solid var(--line)}
+.lore-fold section{padding:96px 0}
+section{padding:96px 0}
+.story{gap:80px}
 </style>
 <!-- /more:css -->
 </head>
@@ -273,17 +289,13 @@ footer .links a:hover{color:var(--teal)}
   <ul id="menu">
     <li><a href="#pv">PV</a></li>
     <li><a href="#world">世界</a></li>
-    <li><a href="#rem">Rem</a></li>
-    <li><a href="#rems">各地のRem</a></li>
-    <li><a href="#rescuers">救助屋</a></li>
-    <li><a href="#characters">キャラクター</a></li>
-    <li><a href="#threads">潮と糸</a></li>
+    <li><a href="#characters">人物</a></li>
+    <li><a href="#game">ゲーム</a></li>
+    <li><a href="#story">物語</a></li>
     <li><a href="#places">舞台</a></li>
-    <li><a href="#scenes">映像</a></li>
-    <li><a href="#gallery">名場面</a></li>
-    <li><a href="#system">システム</a></li>
-    <li><a href="#screens">ゲーム画面</a></li>
-    <li><a href="#about">ゲーム概要</a></li>
+    <li><a href="#lore">もっと知る</a></li>
+    <li><a href="#about">概要</a></li>
+    <li class="nav-cta-li"><a class="nav-cta" href="https://forms.apptalenthub.co.jp/contact?utm_source=rem-site&utm_medium=cta&utm_campaign=notify" target="_blank" rel="noopener">お知らせを受け取る</a></li>
   </ul>
 </nav>
 
@@ -296,9 +308,9 @@ footer .links a:hover{color:var(--teal)}
     <p class="spec-line"><span>ターン制コマンドRPG</span><span>Windows（Steam）</span><span>開発中</span></p>
     <div class="cta">
       <a class="btn" href="#pv">▶ PV を見る</a>
-      <a class="btn sub" href="#about">ゲーム概要</a>
+      <a class="btn sub" href="https://forms.apptalenthub.co.jp/contact?utm_source=rem-site&utm_medium=cta&utm_campaign=notify" target="_blank" rel="noopener">発売のお知らせを受け取る</a>
     </div>
-    <p class="store-note"><b>Steam</b> ストアページ 近日公開</p>
+    <p class="store-note"><b>Steam</b> ストアページは準備中</p>
   </div>
   <span class="scroll" aria-hidden="true"></span>
 </header>
@@ -369,39 +381,6 @@ footer .links a:hover{color:var(--teal)}
     </div>
   </section>
 
-  <section id="rems">
-    <div class="wrap">
-      <p class="eyebrow fx">Rems</p>
-      <h2 class="fx">世界に散らばる、Rem</h2>
-      <p class="thr-lead fx">Rem は、ジンの白い銃だけではない。<br>海の時代よりずっと昔、古代の人々が作った道具で、多くは銃のかたちをしている。撃てば、どんな相手も止められる。<br>世界のあちこちに、ほかの Rem も散らばっている。使えるのは、Rem使いと呼ばれる、ひと握りの熟練者だけ。</p>
-      <div class="thr t3">
-        <article class="it fx"><img width="1280" height="720" src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><div class="body"><h3>かたちは、銃とは限らない</h3><p>青く光る灯籠をかかげる者。長い銃を岩に据えて構える者。井戸を守る用心棒が持つ、古い遺物の銃。持ち主も、使い方も、さまざま。</p></div></article>
-        <article class="it fx"><img width="1280" height="720" src="assets/img/rem_archive.jpg" alt="資料庫。いちばん古い棚だけが空っぽ" loading="lazy"><div class="body"><h3>空っぽの棚</h3><p>中継都市の資料庫に、「海の時代のレム　一〜九」の札のついた棚がある。中は、からっぽ。何年か前、「水を守るために要る」と、誰かが持ち去ったという。</p></div></article>
-        <article class="it fx"><img width="1280" height="720" src="assets/img/gun.jpg" alt="沈んだ神殿の台座の、象牙色の白い銃" loading="lazy"><div class="body"><h3>その中の、一丁</h3><p>沈んだ神殿の台座に、長いあいだ眠っていた、象牙色の白い銃。それが、潮の満ちない少年の手に収まった。</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="rescuers">
-    <div class="wrap">
-      <p class="eyebrow fx">Rescuers</p>
-      <h2 class="fx">救助屋――助けるための、人々。</h2>
-      <p class="thr-lead fx">干上がった海の町には、崩れた建物と、行き場を失った人がいる。<br>そこへ真っ先に走るのが、救助屋だ。主人公ジンも、その見習いのひとり。</p>
-      <article class="thr-wide resc fx">
-        <img width="1280" height="720" src="assets/img/rescue_dispatch.jpg" alt="崩れた瓦礫の下の人を、救助屋が網と綱で引き上げる" loading="lazy">
-        <div class="body"><h3>救助屋とは</h3><p>鐘が鳴ったら走り、呼び笛で仲間を呼び、網と綱で人を引き上げる。それが、救助屋の仕事。</p><p style="margin-top:12px">倒れた梁、絡まった綱、崩れた瓦礫。人を閉じこめるものから、ひとりでも多く助け出すために、町ごとに詰所を構えている。しるしは、「網の目」。</p></div>
-      </article>
-      <article class="thr-wide resc fx">
-        <img width="1280" height="720" src="assets/img/how_tsunagiri.jpg" alt="綱切りで、人にからまった縄をほどく" loading="lazy">
-        <div class="body"><h3>なぜ、「綱切り」なのか</h3><p>綱切りは、人を斬る武器ではない。倒れた梁や、人にからまった綱を切り、瓦礫をこじ開けるための、短い刃物。</p><p style="margin-top:12px">助けるとき、いちばんやっかいなのは、固くからまった縄と梁。潮を刃先へ送れば一太刀で切れるから、人を傷つけずに助け出せる。</p><p style="margin-top:12px">救助屋は、一人前になると、親方から綱切りと呼び笛を渡される。それが、一人前の証。</p></div>
-      </article>
-      <article class="thr-wide resc fx">
-        <img width="1280" height="720" src="assets/img/rescue_net.jpg" alt="詰所の壁いっぱいの大きな網と、それを見上げる見習い" loading="lazy">
-        <div class="body"><h3>なぜ、「網」を繕うのか</h3><p>海のない町で、網を繕うのはなぜ。――網の目ひとつが、助けた人ひとり。</p><p style="margin-top:12px">助けられた人の「ありがとう」を、潮を糸にできる親方が糸にして、網の目をひとつ編む。詰所の壁に掛かる大きな古い網は、その町の救助屋が、これまで助けてきた人の数そのもの。</p><p style="margin-top:12px">網が大きいほど、救助屋は人に頼られる。網は、救助屋の誇りであり、町の人との絆でもある。</p></div>
-      </article>
-    </div>
-  </section>
-
   <section id="characters">
     <div class="wrap">
       <p class="eyebrow fx">Characters</p>
@@ -422,7 +401,7 @@ footer .links a:hover{color:var(--teal)}
             <p class="role">魔法使い</p>
             <h3>ノエル</h3>
             <p class="line">「わたしは、レムに助けられたの。」</p>
-            <p>火・水・風・土の「潮」を借りて糸に紡ぎ、返す魔法使い。Rem のことを、誰よりも知りたがっている。<a href="#threads" style="color:var(--teal);white-space:nowrap">潮と糸とは？ ▸</a></p>
+            <p>火・水・風・土の「潮」を借りて糸に紡ぎ、返す魔法使い。Rem のことを、誰よりも知りたがっている。<a href="#threads" class="fold-link" style="color:var(--teal);white-space:nowrap">潮と糸とは？ ▸</a></p>
           </div>
         </article>
         <article class="char fx">
@@ -435,8 +414,7 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
       </div>
-      <!-- more:cast -->
-      <h3 class="cast-h fx">ヘイズの人々と、旅の先で出会う者たち</h3>
+            <h3 class="cast-h fx">ヘイズの人々と、旅の先で出会う者たち</h3>
       <div class="chars cast">
         <article class="char fx">
           <div class="ph"><img width="457" height="1100" src="assets/img/pose_mina.webp" alt="ミナ の全身" loading="lazy"></div>
@@ -493,15 +471,159 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
       </div>
-<!-- /more:cast -->
-<div class="meet fx">
-        <h3>映像の中の、旅の先</h3>
-        <div class="trio">
-          <figure><img width="1280" height="720" src="assets/img/dancer.jpg" alt="隊商の野営地で踊る女性" loading="lazy"><figcaption>サフィ ― 砂路の舞台で踊る者</figcaption></figure>
-          <figure><img width="1280" height="720" src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><figcaption>オルゼナ ― 灯籠をかかげる者</figcaption></figure>
-          <figure><img width="1280" height="720" src="assets/img/rival.jpg" alt="白い外套の男とジンが斬り結ぶ" loading="lazy"><figcaption>セドラン ― 白い外套の宿敵</figcaption></figure>
+</div>
+  </section>
+
+  <section id="game" style="background:var(--bg2)">
+    <div class="wrap">
+      <p class="eyebrow fx">Game</p>
+      <h2 class="fx">3人で挑む、コマンドバトル</h2>
+      <div class="sys">
+        <div class="feat fx">
+          <img width="1280" height="960" src="assets/img/game_command.jpg" alt="戦闘画面。左下に命令の窓、右下に3人の体力" loading="lazy">
+          <div class="body"><h3>ターン制のコマンドバトル</h3><p>撃つ・たたかう・技・道具・防御。ジン、ノエル、ダリオの3人に命令を出して戦う、じっくり考えるターン制の戦闘。</p></div>
+        </div>
+        <div class="feat fx">
+          <img width="1280" height="960" src="assets/img/game_musubi.jpg" alt="ノエルとダリオのカットインと技の名前" loading="lazy">
+          <div class="body"><h3>連携技「結び断ち」</h3><p>ノエルの糸で敵を結び、ダリオが一体ずつ断ち切る。仲間の力をつなげる連携技が、戦況をひっくり返す。</p></div>
+        </div>
+        <div class="feat fx">
+          <img width="1280" height="960" src="assets/img/game_threads.jpg" alt="金色の糸が敵を結ぶ戦闘画面" loading="lazy">
+          <div class="body"><h3>四本の糸の魔法</h3><p>厄災には、それぞれ苦手な「糸」がある。火・水・風・土を見きわめ、弱いところを突け。</p></div>
+        </div>
+        <div class="feat fx">
+          <img width="1280" height="960" src="assets/img/game_field.jpg" alt="ドット絵の市場通りのフィールド" loading="lazy">
+          <div class="body"><h3>海の底の町を歩く</h3><p>座礁船を組み上げた町、塩の採掘場、沈んだ神殿。描き込まれたドット絵の世界を、3人で旅する。</p></div>
         </div>
       </div>
+
+      <h3 class="gal-h fx" style="margin-top:70px">ゲーム画面</h3>
+      <p class="note-s fx">開発中の画面です（試作版）。押すと大きく見られます。</p>
+      <div class="gal g43">
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_hays.webp" alt="ゲーム画面：座礁船の町ヘイズ" loading="lazy"><figcaption><b>座礁船の町ヘイズ</b>傾いた大きな船が宿になっている、井戸の広場。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_grau.webp" alt="ゲーム画面：石の鎧の厄災" loading="lazy"><figcaption><b>石の鎧の厄災</b>硬い鎧は、ダリオの「鎧断ち」で割る。厄災には苦手な「糸」もある。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_grau_act.webp" alt="ゲーム画面：3人の連携" loading="lazy"><figcaption><b>3人の連携</b>ジンが撃ち、ノエルが砂の槍を突き上げる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_city.webp" alt="ゲーム画面：中継都市" loading="lazy"><figcaption><b>中継都市</b>日干し煉瓦の大きな町。列車の駅がある。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_noel.webp" alt="ゲーム画面：会話" loading="lazy"><figcaption><b>会話</b>顔のアイコンつきで、ふりがなも出せる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_world.webp" alt="ゲーム画面：全体マップ" loading="lazy"><figcaption><b>全体マップ</b>干上がった海の底を、地図で旅する。</figcaption></figure>
+      </div>
+      <div class="more-wrap" id="more-game" hidden>
+        <div class="gal g43" style="margin-top:16px">
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_market.webp" alt="ゲーム画面：市場通り" loading="lazy"><figcaption><b>市場通り</b>干し魚と塩の店が並ぶ、町の東側。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_hill.webp" alt="ゲーム画面：鯨の骨の丘" loading="lazy"><figcaption><b>鯨の骨の丘</b>巨大な骨のアーチの向こうに、上の段への石段。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_canal.webp" alt="ゲーム画面：運河" loading="lazy"><figcaption><b>運河</b>水のない運河に、小舟が並ぶ。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_salt.webp" alt="ゲーム画面：塩の採掘場" loading="lazy"><figcaption><b>塩の採掘場</b>白い塩の段々と、錆びた選別機。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_tower.webp" alt="ゲーム画面：灯台の揚水塔" loading="lazy"><figcaption><b>灯台の揚水塔</b>町へ水を送る、古い塔と水車。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_train.webp" alt="ゲーム画面：砂嵐の列車" loading="lazy"><figcaption><b>砂嵐の列車</b>砂の海を渡る、護送隊の列車。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_watertown.webp" alt="ゲーム画面：水争いの町" loading="lazy"><figcaption><b>水争いの町</b>一つの井戸を、二つの町が取り合っている。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_temple.webp" alt="ゲーム画面：沈んだ神殿" loading="lazy"><figcaption><b>沈んだ神殿</b>海の底に沈んでいた、古い神殿。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_mob.webp" alt="ゲーム画面：雑魚との戦い" loading="lazy"><figcaption><b>雑魚との戦い</b>撃つ・たたかう・技・道具・防御。3人に命令を出すターン制。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_sandeater.webp" alt="ゲーム画面：砂の厄災" loading="lazy"><figcaption><b>砂の厄災</b>砂の体には、風の糸。相手ごとに戦い方が変わる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_bellucca.webp" alt="ゲーム画面：人が相手のとき" loading="lazy"><figcaption><b>人が相手のとき</b>ジンの白い銃は、人には向けられない。綱切りで戦う。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_marta.webp" alt="ゲーム画面：救助屋の詰所" loading="lazy"><figcaption><b>救助屋の詰所</b>親方のマルタ。仮眠所で休むこともできる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_mina.webp" alt="ゲーム画面：井戸の広場" loading="lazy"><figcaption><b>井戸の広場</b>ミナは、今日も水を数えている。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_menu.webp" alt="ゲーム画面：メニュー" loading="lazy"><figcaption><b>メニュー</b>道具・技・装備・並び・状態・記録・設定。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_equip.webp" alt="ゲーム画面：装備" loading="lazy"><figcaption><b>装備</b>銃・胴・頭・お守りの4つ。</figcaption></figure>
+        </div>
+      </div>
+      <button class="more-btn" type="button" data-more="more-game" data-open="ゲーム画面を、あと15枚見る ▾" data-close="閉じる ▴">ゲーム画面を、あと15枚見る ▾</button>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow fx">Story</p>
+      <h2 class="fx">物語の一幕</h2>
+      <p class="note-s fx">ゲームの会話の上に出る一枚絵から、物語のはじめのほうを。押すと大きく見られます。</p>
+      <div class="gal">
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_tsunagiri.jpg" alt="綱切りの稽古" loading="lazy"><figcaption><b>綱切りの稽古</b>救助屋の見習いジン。何度振っても、太い縄は切れない。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_mina_cut.jpg" alt="ミナの一太刀" loading="lazy"><figcaption><b>ミナの一太刀</b>息をはいて、すっと当てるだけ。縄が、ぱさっと落ちた。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_plaza.jpg" alt="井戸の水は、あと七日" loading="lazy"><figcaption><b>井戸の水は、あと七日</b>広場に集まった町の人たちに、水番が告げる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_crab.jpg" alt="沈んだ神殿で" loading="lazy"><figcaption><b>沈んだ神殿で</b>巨大な錆ガニに追い詰められ、背中が台座にぶつかる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_noel.jpg" alt="借りたら、返すとこまで" loading="lazy"><figcaption><b>借りたら、返すとこまで</b>井戸の水を宙に浮かべる、魔法使いのノエル。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s0_7.jpg" alt="海溝の戦い" loading="lazy"><figcaption><b>海溝の戦い</b>三人で、初めて背中を合わせる。</figcaption></figure>
+      </div>
+      <div class="more-wrap" id="more-story" hidden>
+        <div class="gal" style="margin-top:16px">
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_night.jpg" alt="夜の井戸のふち" loading="lazy"><figcaption><b>夜の井戸のふち</b>水の戻った夜。ジンとミナが、並んで座る。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_1.jpg" alt="上の段への石段" loading="lazy"><figcaption><b>上の段への石段</b>水が戻ると、砂に埋もれていた石段が開く。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_4.jpg" alt="塩の採掘場" loading="lazy"><figcaption><b>塩の採掘場</b>硬いところを殴るな。何を留めてるか、見ろ。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_5.jpg" alt="船橋の通せんぼ" loading="lazy"><figcaption><b>船橋の通せんぼ</b>釣鐘の大工ベルッカが、橋の真ん中に立ちはだかる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_6.jpg" alt="揚水塔の魔獣" loading="lazy"><figcaption><b>揚水塔の魔獣</b>町へ水を送る塔に、殻の獣がからみつく。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_7.jpg" alt="白い銃のジン" loading="lazy"><figcaption><b>白い銃のジン</b>水の戻った町で、人の輪の真ん中に立たされる。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s2_1.jpg" alt="中継都市の舞台" loading="lazy"><figcaption><b>中継都市の舞台</b>日干し煉瓦の大きな町。板の舞台で、踊り手が回る。</figcaption></figure>
+        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s2_2.jpg" alt="砂嵐の列車" loading="lazy"><figcaption><b>砂嵐の列車</b>砂丘の下から身を起こす影。乗客を、前の車両へ。</figcaption></figure>
+        </div>
+      </div>
+      <button class="more-btn" type="button" data-more="more-story" data-open="一枚絵を、あと8枚見る ▾" data-close="閉じる ▴">一枚絵を、あと8枚見る ▾</button>
+      <h3 class="gal-h fx" style="margin-top:70px">映像で</h3>
+      <p class="note-s fx">プロモーション用に制作した映像です。ゲーム内の演出ではありません。</p>
+      <div class="scenes">
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_gun.jpg" aria-label="沈んだ神殿で、白い銃を手にする"><source src="assets/video/sc_gun.mp4" type="video/mp4"></video><figcaption>沈んだ神殿で、白い銃を手にする</figcaption></figure>
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_crab.jpg" aria-label="錆ガニに追われて"><source src="assets/video/sc_crab.mp4" type="video/mp4"></video><figcaption>錆ガニに追われて</figcaption></figure>
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_noel.jpg" aria-label="潮を借りて、返す魔法"><source src="assets/video/sc_noel.mp4" type="video/mp4"></video><figcaption>潮を借りて、返す魔法</figcaption></figure>
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_team.jpg" aria-label="連携技「結び断ち」"><source src="assets/video/sc_team.mp4" type="video/mp4"></video><figcaption>連携技「結び断ち」</figcaption></figure>
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_chase.jpg" aria-label="厄災に追われる"><source src="assets/video/sc_chase.mp4" type="video/mp4"></video><figcaption>厄災に追われる</figcaption></figure>
+        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_seal.jpg" aria-label="光で包み、封じる"><source src="assets/video/sc_seal.mp4" type="video/mp4"></video><figcaption>光で包み、封じる</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="places" style="background:var(--bg2)">
+    <div class="wrap">
+      <p class="eyebrow fx">Places</p>
+      <h2 class="fx">海の底を、旅する。</h2>
+      <div class="places">
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_hays.jpg" alt="座礁船の町ヘイズのゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>座礁船の町ヘイズ</h3><p>干上がった海に取り残された船を組み上げた、ジンたちの町。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_city.jpg" alt="中継都市のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>中継都市</h3><p>砂の街道が交わり、人と荷が集まる、にぎやかな都。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_watertown.jpg" alt="水争いの町のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>水争いの町</h3><p>涸れかけた井戸をめぐって、人々がにらみ合う町。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_temple.jpg" alt="沈んだ神殿のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>沈んだ神殿</h3><p>海の時代から眠る神殿。その奥の台座に、白い銃が。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_trench.jpg" alt="廃線の海溝のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>廃線の海溝</h3><p>古い線路が走る、深い海の溝。盗賊がひそんでいる。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_salt.jpg" alt="塩の採掘場のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>塩の採掘場</h3><p>白い塩の段々が広がる、かつての海の名残。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_bridge.jpg" alt="船橋のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>船橋</h3><p>船をつないで渡した、深い谷にかかる橋。</p></div></article>
+        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_train.jpg" alt="砂の列車のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>砂の列車</h3><p>砂漠を渡る列車。その最後尾に、何かがいる。</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lore">
+    <div class="wrap">
+      <p class="eyebrow fx">More</p>
+      <h2 class="fx">世界を、もっと知る</h2>
+      <p class="note-s fx">各地に散らばる Rem のこと、救助屋という仕事のこと、世界に流れる「潮」と「糸」のこと。遊ぶ前に知らなくてもいい、でも知るともっと面白くなる話。</p>
+      <button class="more-btn" type="button" data-more="more-lore" data-open="各地の Rem・救助屋・潮と糸 を読む ▾" data-close="閉じる ▴">各地の Rem・救助屋・潮と糸 を読む ▾</button>
+    </div>
+    <div class="more-wrap lore-fold" id="more-lore" hidden>
+  <section id="rems">
+    <div class="wrap">
+      <p class="eyebrow fx">Rems</p>
+      <h2 class="fx">世界に散らばる、Rem</h2>
+      <p class="thr-lead fx">Rem は、ジンの白い銃だけではない。<br>海の時代よりずっと昔、古代の人々が作った道具で、多くは銃のかたちをしている。撃てば、どんな相手も止められる。<br>世界のあちこちに、ほかの Rem も散らばっている。使えるのは、Rem使いと呼ばれる、ひと握りの熟練者だけ。</p>
+      <div class="thr t3">
+        <article class="it fx"><img width="1280" height="720" src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><div class="body"><h3>かたちは、銃とは限らない</h3><p>青く光る灯籠をかかげる者。長い銃を岩に据えて構える者。井戸を守る用心棒が持つ、古い遺物の銃。持ち主も、使い方も、さまざま。</p></div></article>
+        <article class="it fx"><img width="1280" height="720" src="assets/img/rem_archive.jpg" alt="資料庫。いちばん古い棚だけが空っぽ" loading="lazy"><div class="body"><h3>空っぽの棚</h3><p>中継都市の資料庫に、「海の時代のレム　一〜九」の札のついた棚がある。中は、からっぽ。何年か前、「水を守るために要る」と、誰かが持ち去ったという。</p></div></article>
+        <article class="it fx"><img width="1280" height="720" src="assets/img/gun.jpg" alt="沈んだ神殿の台座の、象牙色の白い銃" loading="lazy"><div class="body"><h3>その中の、一丁</h3><p>沈んだ神殿の台座に、長いあいだ眠っていた、象牙色の白い銃。それが、潮の満ちない少年の手に収まった。</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rescuers">
+    <div class="wrap">
+      <p class="eyebrow fx">Rescuers</p>
+      <h2 class="fx">救助屋――助けるための、人々。</h2>
+      <p class="thr-lead fx">干上がった海の町には、崩れた建物と、行き場を失った人がいる。<br>そこへ真っ先に走るのが、救助屋だ。主人公ジンも、その見習いのひとり。</p>
+      <article class="thr-wide resc fx">
+        <img width="1280" height="720" src="assets/img/rescue_dispatch.jpg" alt="崩れた瓦礫の下の人を、救助屋が網と綱で引き上げる" loading="lazy">
+        <div class="body"><h3>救助屋とは</h3><p>鐘が鳴ったら走り、呼び笛で仲間を呼び、網と綱で人を引き上げる。それが、救助屋の仕事。</p><p style="margin-top:12px">倒れた梁、絡まった綱、崩れた瓦礫。人を閉じこめるものから、ひとりでも多く助け出すために、町ごとに詰所を構えている。しるしは、「網の目」。</p></div>
+      </article>
+      <article class="thr-wide resc fx">
+        <img width="1280" height="720" src="assets/img/how_tsunagiri.jpg" alt="綱切りで、人にからまった縄をほどく" loading="lazy">
+        <div class="body"><h3>なぜ、「綱切り」なのか</h3><p>綱切りは、人を斬る武器ではない。倒れた梁や、人にからまった綱を切り、瓦礫をこじ開けるための、短い刃物。</p><p style="margin-top:12px">助けるとき、いちばんやっかいなのは、固くからまった縄と梁。潮を刃先へ送れば一太刀で切れるから、人を傷つけずに助け出せる。</p><p style="margin-top:12px">救助屋は、一人前になると、親方から綱切りと呼び笛を渡される。それが、一人前の証。</p></div>
+      </article>
+      <article class="thr-wide resc fx">
+        <img width="1280" height="720" src="assets/img/rescue_net.jpg" alt="詰所の壁いっぱいの大きな網と、それを見上げる見習い" loading="lazy">
+        <div class="body"><h3>なぜ、「網」を繕うのか</h3><p>海のない町で、網を繕うのはなぜ。――網の目ひとつが、助けた人ひとり。</p><p style="margin-top:12px">助けられた人の「ありがとう」を、潮を糸にできる親方が糸にして、網の目をひとつ編む。詰所の壁に掛かる大きな古い網は、その町の救助屋が、これまで助けてきた人の数そのもの。</p><p style="margin-top:12px">網が大きいほど、救助屋は人に頼られる。網は、救助屋の誇りであり、町の人との絆でもある。</p></div>
+      </article>
     </div>
   </section>
 
@@ -533,129 +655,8 @@ footer .links a:hover{color:var(--teal)}
     </div>
   </section>
 
-  <section id="places" style="background:var(--bg2)">
-    <div class="wrap">
-      <p class="eyebrow fx">Places</p>
-      <h2 class="fx">海の底を、旅する。</h2>
-      <div class="places">
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_hays.jpg" alt="座礁船の町ヘイズのゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>座礁船の町ヘイズ</h3><p>干上がった海に取り残された船を組み上げた、ジンたちの町。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_city.jpg" alt="中継都市のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>中継都市</h3><p>砂の街道が交わり、人と荷が集まる、にぎやかな都。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_watertown.jpg" alt="水争いの町のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">町</p><h3>水争いの町</h3><p>涸れかけた井戸をめぐって、人々がにらみ合う町。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_temple.jpg" alt="沈んだ神殿のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>沈んだ神殿</h3><p>海の時代から眠る神殿。その奥の台座に、白い銃が。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_trench.jpg" alt="廃線の海溝のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>廃線の海溝</h3><p>古い線路が走る、深い海の溝。盗賊がひそんでいる。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_salt.jpg" alt="塩の採掘場のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>塩の採掘場</h3><p>白い塩の段々が広がる、かつての海の名残。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_bridge.jpg" alt="船橋のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>船橋</h3><p>船をつないで渡した、深い谷にかかる橋。</p></div></article>
-        <article class="pl fx"><div class="ph"><img width="640" height="480" src="assets/img/place_train.jpg" alt="砂の列車のゲーム画面" loading="lazy"></div><div class="body"><p class="kind">ダンジョン</p><h3>砂の列車</h3><p>砂漠を渡る列車。その最後尾に、何かがいる。</p></div></article>
-      </div>
     </div>
   </section>
-
-  <section id="scenes">
-    <div class="wrap">
-      <p class="eyebrow fx">Promotion Movie</p>
-      <h2 class="fx">物語の一幕を、映像で</h2>
-      <p class="fx" style="text-align:center;opacity:.7;font-size:.9rem;margin:-6px 0 22px">※ プロモーション用に制作した映像です。ゲーム内の演出ではありません。</p>
-      <div class="scenes">
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_gun.jpg" aria-label="沈んだ神殿で、白い銃を手にする"><source src="assets/video/sc_gun.mp4" type="video/mp4"></video><figcaption>沈んだ神殿で、白い銃を手にする</figcaption></figure>
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_crab.jpg" aria-label="錆ガニに追われて"><source src="assets/video/sc_crab.mp4" type="video/mp4"></video><figcaption>錆ガニに追われて</figcaption></figure>
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_noel.jpg" aria-label="潮を借りて、返す魔法"><source src="assets/video/sc_noel.mp4" type="video/mp4"></video><figcaption>潮を借りて、返す魔法</figcaption></figure>
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_team.jpg" aria-label="連携技「結び断ち」"><source src="assets/video/sc_team.mp4" type="video/mp4"></video><figcaption>連携技「結び断ち」</figcaption></figure>
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_chase.jpg" aria-label="厄災に追われる"><source src="assets/video/sc_chase.mp4" type="video/mp4"></video><figcaption>厄災に追われる</figcaption></figure>
-        <figure class="scene fx"><video muted loop playsinline preload="none" poster="assets/img/sc_seal.jpg" aria-label="光で包み、封じる"><source src="assets/video/sc_seal.mp4" type="video/mp4"></video><figcaption>光で包み、封じる</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-<!-- more:gallery -->
-  <section id="gallery">
-    <div class="wrap">
-      <p class="eyebrow fx">Scenes</p>
-      <h2 class="fx">物語の一幕を、一枚絵で</h2>
-      <p class="note-s fx">ゲームの会話の上に出る一枚絵から、物語のはじめのほうを。押すと大きく見られます。</p>
-      <div class="gal">
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_tsunagiri.jpg" alt="綱切りの稽古" loading="lazy"><figcaption><b>綱切りの稽古</b>救助屋の見習いジン。何度振っても、太い縄は切れない。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_mina_cut.jpg" alt="ミナの一太刀" loading="lazy"><figcaption><b>ミナの一太刀</b>息をはいて、すっと当てるだけ。縄が、ぱさっと落ちた。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_plaza.jpg" alt="井戸の水は、あと七日" loading="lazy"><figcaption><b>井戸の水は、あと七日</b>広場に集まった町の人たちに、水番が告げる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_crab.jpg" alt="沈んだ神殿で" loading="lazy"><figcaption><b>沈んだ神殿で</b>巨大な錆ガニに追い詰められ、背中が台座にぶつかる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_noel.jpg" alt="借りたら、返すとこまで" loading="lazy"><figcaption><b>借りたら、返すとこまで</b>井戸の水を宙に浮かべる、魔法使いのノエル。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s0_7.jpg" alt="海溝の戦い" loading="lazy"><figcaption><b>海溝の戦い</b>三人で、初めて背中を合わせる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_night.jpg" alt="夜の井戸のふち" loading="lazy"><figcaption><b>夜の井戸のふち</b>水の戻った夜。ジンとミナが、並んで座る。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_1.jpg" alt="上の段への石段" loading="lazy"><figcaption><b>上の段への石段</b>水が戻ると、砂に埋もれていた石段が開く。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_4.jpg" alt="塩の採掘場" loading="lazy"><figcaption><b>塩の採掘場</b>硬いところを殴るな。何を留めてるか、見ろ。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_5.jpg" alt="船橋の通せんぼ" loading="lazy"><figcaption><b>船橋の通せんぼ</b>釣鐘の大工ベルッカが、橋の真ん中に立ちはだかる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_6.jpg" alt="揚水塔の魔獣" loading="lazy"><figcaption><b>揚水塔の魔獣</b>町へ水を送る塔に、殻の獣がからみつく。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s1_7.jpg" alt="白い銃のジン" loading="lazy"><figcaption><b>白い銃のジン</b>水の戻った町で、人の輪の真ん中に立たされる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s2_1.jpg" alt="中継都市の舞台" loading="lazy"><figcaption><b>中継都市の舞台</b>日干し煉瓦の大きな町。板の舞台で、踊り手が回る。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="1280" height="720" src="assets/img/scene_s2_2.jpg" alt="砂嵐の列車" loading="lazy"><figcaption><b>砂嵐の列車</b>砂丘の下から身を起こす影。乗客を、前の車両へ。</figcaption></figure>
-      </div>
-    </div>
-  </section>
-<!-- /more:gallery -->
-
-  <section id="system" style="background:var(--bg2)">
-    <div class="wrap">
-      <p class="eyebrow fx">System</p>
-      <h2 class="fx">3人で挑む、コマンドバトル</h2>
-      <div class="sys">
-        <div class="feat fx">
-          <img width="1280" height="960" src="assets/img/game_command.jpg" alt="戦闘画面。左下に命令の窓、右下に3人の体力" loading="lazy">
-          <div class="body"><h3>ターン制のコマンドバトル</h3><p>撃つ・たたかう・技・道具・防御。ジン、ノエル、ダリオの3人に命令を出して戦う、じっくり考えるターン制の戦闘。</p></div>
-        </div>
-        <div class="feat fx">
-          <img width="1280" height="960" src="assets/img/game_musubi.jpg" alt="ノエルとダリオのカットインと技の名前" loading="lazy">
-          <div class="body"><h3>連携技「結び断ち」</h3><p>ノエルの糸で敵を結び、ダリオが一体ずつ断ち切る。仲間の力をつなげる連携技が、戦況をひっくり返す。</p></div>
-        </div>
-        <div class="feat fx">
-          <img width="1280" height="960" src="assets/img/game_threads.jpg" alt="金色の糸が敵を結ぶ戦闘画面" loading="lazy">
-          <div class="body"><h3>四本の糸の魔法</h3><p>厄災には、それぞれ苦手な「糸」がある。火・水・風・土を見きわめ、弱いところを突け。</p></div>
-        </div>
-        <div class="feat fx">
-          <img width="1280" height="960" src="assets/img/game_field.jpg" alt="ドット絵の市場通りのフィールド" loading="lazy">
-          <div class="body"><h3>海の底の町を歩く</h3><p>座礁船を組み上げた町、塩の採掘場、沈んだ神殿。描き込まれたドット絵の世界を、3人で旅する。</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- more:screens -->
-  <section id="screens">
-    <div class="wrap">
-      <p class="eyebrow fx">Screenshots</p>
-      <h2 class="fx">ゲーム画面</h2>
-      <p class="note-s fx">開発中の画面です（試作版）。押すと大きく見られます。</p>
-      <h3 class="gal-h fx">海の底の町と、旅の舞台</h3>
-      <div class="gal g43">
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_hays.webp" alt="ゲーム画面：座礁船の町ヘイズ" loading="lazy"><figcaption><b>座礁船の町ヘイズ</b>傾いた大きな船が宿になっている、井戸の広場。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_market.webp" alt="ゲーム画面：市場通り" loading="lazy"><figcaption><b>市場通り</b>干し魚と塩の店が並ぶ、町の東側。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_hill.webp" alt="ゲーム画面：鯨の骨の丘" loading="lazy"><figcaption><b>鯨の骨の丘</b>巨大な骨のアーチの向こうに、上の段への石段。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_canal.webp" alt="ゲーム画面：運河" loading="lazy"><figcaption><b>運河</b>水のない運河に、小舟が並ぶ。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_salt.webp" alt="ゲーム画面：塩の採掘場" loading="lazy"><figcaption><b>塩の採掘場</b>白い塩の段々と、錆びた選別機。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_tower.webp" alt="ゲーム画面：灯台の揚水塔" loading="lazy"><figcaption><b>灯台の揚水塔</b>町へ水を送る、古い塔と水車。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_city.webp" alt="ゲーム画面：中継都市" loading="lazy"><figcaption><b>中継都市</b>日干し煉瓦の大きな町。列車の駅がある。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_train.webp" alt="ゲーム画面：砂嵐の列車" loading="lazy"><figcaption><b>砂嵐の列車</b>砂の海を渡る、護送隊の列車。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_watertown.webp" alt="ゲーム画面：水争いの町" loading="lazy"><figcaption><b>水争いの町</b>一つの井戸を、二つの町が取り合っている。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_temple.webp" alt="ゲーム画面：沈んだ神殿" loading="lazy"><figcaption><b>沈んだ神殿</b>海の底に沈んでいた、古い神殿。</figcaption></figure>
-      </div>
-      <h3 class="gal-h fx">戦い</h3>
-      <div class="gal g43">
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_mob.webp" alt="ゲーム画面：雑魚との戦い" loading="lazy"><figcaption><b>雑魚との戦い</b>撃つ・たたかう・技・道具・防御。3人に命令を出すターン制。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_grau.webp" alt="ゲーム画面：石の鎧の厄災" loading="lazy"><figcaption><b>石の鎧の厄災</b>硬い鎧は、ダリオの「鎧断ち」で割る。厄災には苦手な「糸」もある。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_grau_act.webp" alt="ゲーム画面：3人の連携" loading="lazy"><figcaption><b>3人の連携</b>ジンが撃ち、ノエルが砂の槍を突き上げる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_sandeater.webp" alt="ゲーム画面：砂の厄災" loading="lazy"><figcaption><b>砂の厄災</b>砂の体には、風の糸。相手ごとに戦い方が変わる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_b_bellucca.webp" alt="ゲーム画面：人が相手のとき" loading="lazy"><figcaption><b>人が相手のとき</b>ジンの白い銃は、人には向けられない。綱切りで戦う。</figcaption></figure>
-      </div>
-      <h3 class="gal-h fx">会話・メニュー・地図</h3>
-      <div class="gal g43">
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_noel.webp" alt="ゲーム画面：会話" loading="lazy"><figcaption><b>会話</b>顔のアイコンつきで、ふりがなも出せる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_marta.webp" alt="ゲーム画面：救助屋の詰所" loading="lazy"><figcaption><b>救助屋の詰所</b>親方のマルタ。仮眠所で休むこともできる。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_talk_mina.webp" alt="ゲーム画面：井戸の広場" loading="lazy"><figcaption><b>井戸の広場</b>ミナは、今日も水を数えている。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_menu.webp" alt="ゲーム画面：メニュー" loading="lazy"><figcaption><b>メニュー</b>道具・技・装備・並び・状態・記録・設定。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_equip.webp" alt="ゲーム画面：装備" loading="lazy"><figcaption><b>装備</b>銃・胴・頭・お守りの4つ。</figcaption></figure>
-        <figure class="fx" data-zoom><img width="960" height="720" src="assets/img/shot_world.webp" alt="ゲーム画面：全体マップ" loading="lazy"><figcaption><b>全体マップ</b>干上がった海の底を、地図で旅する。</figcaption></figure>
-      </div>
-    </div>
-  </section>
-<!-- /more:screens -->
 
   <section id="about">
     <div class="wrap">
@@ -674,14 +675,13 @@ footer .links a:hover{color:var(--teal)}
     </div>
   </section>
 
-  <!-- more:together -->
   <section id="together">
     <div class="wrap">
       <figure class="trio-art fx"><img width="1536" height="1024" src="assets/img/trio_dusk.webp" alt="夕暮れの砂丘に並んで立つ、ダリオ・ジン・ノエル。遠くに座礁船の町ヘイズの灯り" loading="lazy"></figure>
       <p class="trio-line fx">ジン、ノエル、ダリオ。<br>三人の旅は、干上がった海の底から始まる。</p>
     </div>
   </section>
-<!-- /more:together -->
+
 <section class="closing">
     <div class="bg" aria-hidden="true"></div>
     <div class="in wrap fx">
@@ -689,9 +689,10 @@ footer .links a:hover{color:var(--teal)}
       <img width="1200" height="675" class="logo" src="assets/img/logo.png" alt="Rem">
       <p class="place">海底の荒野</p>
       <div class="cta">
-        <a class="btn" href="#pv">▶ PV をもう一度見る</a>
+        <a class="btn" href="https://forms.apptalenthub.co.jp/contact?utm_source=rem-site&utm_medium=cta&utm_campaign=notify" target="_blank" rel="noopener">発売のお知らせを受け取る</a>
+        <a class="btn sub" href="https://www.youtube.com/watch?v=x8KIr4mZpsY" target="_blank" rel="noopener">▶ YouTube で PV を見る</a>
       </div>
-      <p class="store-note"><b>Steam</b> ストアページ 近日公開</p>
+      <p class="store-note"><b>Steam</b> ストアページは準備中。お知らせは、上のフォームから。</p>
     </div>
   </section>
 </main>
@@ -753,5 +754,24 @@ const YOUTUBE_ID = 'x8KIr4mZpsY';   // Rem PV（YouTube Studio：2026-10-14 ア�
 })();
 </script>
 <!-- /more:zoom -->
+<script>
+(function () {
+  const open = (id, on) => {
+    const w = document.getElementById(id), b = document.querySelector('[data-more="' + id + '"]');
+    if (!w || !b) return;
+    const now = w.hasAttribute('hidden');
+    const want = on === undefined ? now : on;
+    if (want) { w.removeAttribute('hidden'); b.textContent = b.dataset.close; b.setAttribute('aria-expanded', 'true'); }
+    else { w.setAttribute('hidden', ''); b.textContent = b.dataset.open; b.setAttribute('aria-expanded', 'false'); }
+    w.querySelectorAll('.fx').forEach(e => e.classList.add('on'));
+  };
+  document.querySelectorAll('[data-more]').forEach(b => { b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-controls', b.dataset.more); b.addEventListener('click', () => open(b.dataset.more)); });
+  const inFold = ['rems', 'rescuers', 'threads'];
+  const byHash = () => { const h = location.hash.slice(1); if (inFold.includes(h)) { open('more-lore', true); setTimeout(() => { const t = document.getElementById(h); if (t) t.scrollIntoView(); }, 30); } };
+  window.addEventListener('hashchange', byHash); byHash();
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => { const h = a.getAttribute('href').slice(1); if (inFold.includes(h)) open('more-lore', true); }));
+})();
+</script>
+
 </body>
 </html>
