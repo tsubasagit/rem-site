@@ -258,6 +258,10 @@ footer .links a:hover{color:var(--teal)}
 #zoom.on{display:grid}
 #zoom img{max-width:min(1280px,96vw);max-height:84vh;object-fit:contain;border:1px solid var(--line)}
 #zoom p{color:var(--ivory);text-align:center;margin-top:12px;font-size:.92rem}
+#together{padding:90px 0 0}
+.trio-art{border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.trio-art img{display:block;width:100%;height:auto}
+.trio-line{font-family:var(--mincho);text-align:center;color:var(--ivory);font-size:clamp(1.05rem,2.4vw,1.5rem);letter-spacing:.12em;line-height:1.9;margin-top:34px;text-wrap:balance}
 </style>
 <!-- /more:css -->
 </head>
@@ -453,7 +457,7 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
         <article class="char fx">
-          <div class="ph"><img width="715" height="1100" src="assets/img/pose_safi.webp" alt="サフィ の全身" loading="lazy"></div>
+          <div class="ph"><img width="719" height="1100" src="assets/img/pose_safi.webp" alt="サフィ の全身" loading="lazy"></div>
           <div class="body">
             <p class="role">帆装職人・踊り手</p>
             <h3>サフィ</h3>
@@ -471,7 +475,7 @@ footer .links a:hover{color:var(--teal)}
           </div>
         </article>
         <article class="char fx">
-          <div class="ph"><img width="654" height="1100" src="assets/img/pose_bellucca.webp" alt="ベルッカ の全身" loading="lazy"></div>
+          <div class="ph"><img width="644" height="1100" src="assets/img/pose_bellucca.webp" alt="ベルッカ の全身" loading="lazy"></div>
           <div class="body">
             <p class="role">船橋の大工</p>
             <h3>ベルッカ</h3>
@@ -493,9 +497,9 @@ footer .links a:hover{color:var(--teal)}
 <div class="meet fx">
         <h3>映像の中の、旅の先</h3>
         <div class="trio">
-          <figure><img width="1280" height="720" src="assets/img/dancer.jpg" alt="隊商の野営地で踊る女性" loading="lazy"><figcaption>砂路の舞台で踊る者</figcaption></figure>
-          <figure><img width="1280" height="720" src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><figcaption>灯籠をかかげる者</figcaption></figure>
-          <figure><img width="1280" height="720" src="assets/img/rival.jpg" alt="白い外套の男とジンが斬り結ぶ" loading="lazy"><figcaption>白い外套の宿敵</figcaption></figure>
+          <figure><img width="1280" height="720" src="assets/img/dancer.jpg" alt="隊商の野営地で踊る女性" loading="lazy"><figcaption>サフィ ― 砂路の舞台で踊る者</figcaption></figure>
+          <figure><img width="1280" height="720" src="assets/img/enemy.jpg" alt="青く光る灯籠をかかげる女性" loading="lazy"><figcaption>オルゼナ ― 灯籠をかかげる者</figcaption></figure>
+          <figure><img width="1280" height="720" src="assets/img/rival.jpg" alt="白い外套の男とジンが斬り結ぶ" loading="lazy"><figcaption>セドラン ― 白い外套の宿敵</figcaption></figure>
         </div>
       </div>
     </div>
@@ -670,7 +674,15 @@ footer .links a:hover{color:var(--teal)}
     </div>
   </section>
 
-  <section class="closing">
+  <!-- more:together -->
+  <section id="together">
+    <div class="wrap">
+      <figure class="trio-art fx"><img width="1536" height="1024" src="assets/img/trio_dusk.webp" alt="夕暮れの砂丘に並んで立つ、ダリオ・ジン・ノエル。遠くに座礁船の町ヘイズの灯り" loading="lazy"></figure>
+      <p class="trio-line fx">ジン、ノエル、ダリオ。<br>三人の旅は、干上がった海の底から始まる。</p>
+    </div>
+  </section>
+<!-- /more:together -->
+<section class="closing">
     <div class="bg" aria-hidden="true"></div>
     <div class="in wrap fx">
       <p class="ask">なぜ、Rem だけが<br>厄災を封じられるのか――</p>
