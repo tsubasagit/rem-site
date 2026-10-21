@@ -20,7 +20,7 @@
 {"@context":"https://schema.org","@type":"VideoGame","name":"Rem ― 海底の荒野","alternateName":"Rem","url":"https://tsubasagit.github.io/rem-site/",
 "description":"はるか昔、突如として海が消えていった。干上がった海の底の荒野を舞台に、水を涸らす「厄災」と、それを封じる白い銃「Rem」をめぐるターン制コマンドRPG。",
 "genre":["RPG","ターン制コマンドRPG"],"gamePlatform":"Windows","operatingSystem":"Windows","playMode":"SinglePlayer","inLanguage":"ja",
-"image":"https://tsubasagit.github.io/rem-site/assets/img/og.jpg","trailer":{"@type":"VideoObject","name":"Rem ― 海底の荒野 プロモーション映像","embedUrl":"https://www.youtube.com/embed/ypwtUdW6Gd4","thumbnailUrl":"https://i.ytimg.com/vi/ypwtUdW6Gd4/hqdefault.jpg","uploadDate":"2026-10-20"},
+"image":"https://tsubasagit.github.io/rem-site/assets/img/og.jpg","trailer":{"@type":"VideoObject","name":"Rem ― 海底の荒野 プロモーション映像","contentUrl":"https://tsubasagit.github.io/rem-site/assets/video/rem-pv-20261022.mp4","thumbnailUrl":"https://tsubasagit.github.io/rem-site/assets/img/pv-20261022.webp","uploadDate":"2026-10-22","description":"最新の移動・会話・戦闘・連携技を収録したプロモーション映像。アニメーションはプロモーション用です。"},
 "author":{"@type":"Organization","name":"株式会社AppTalentHub","url":"https://apptalenthub.co.jp/"},"publisher":{"@type":"Organization","name":"株式会社AppTalentHub","url":"https://apptalenthub.co.jp/"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,7 +93,8 @@ h3{font-family:var(--mincho);font-weight:800;font-size:1.35rem;letter-spacing:.0
 /* ---- PV ---- */
 #pv{padding-top:40px}
 .pv{position:relative;aspect-ratio:16/9;background:#000 center/cover;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.pv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv iframe,.pv video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv-note{margin-top:14px;color:var(--sub);font-size:.875rem}
 .pv .soon{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,8,12,.55);font-family:var(--mincho);letter-spacing:.3em;color:var(--ivory);font-size:1.1rem;text-align:center}
 .pv .soon small{display:block;font-family:var(--sans);letter-spacing:.1em;color:var(--sub);font-size:.86rem;margin-top:6px}
 
@@ -346,8 +347,9 @@ section{padding:96px 0}
       <p class="eyebrow">Promotion Video</p>
       <h2>プロモーション映像</h2>
       <div class="pv" id="pvbox" style="background-image:url(assets/img/chase.webp)">
-        <div class="soon">PV 公開準備中<small>まもなく公開します</small></div>
+        <video controls playsinline preload="none" poster="assets/img/pv-20261022.webp" aria-label="Rem 海底の荒野 プロモーション映像（2026年10月22日更新）"><source src="assets/video/rem-pv-20261022.mp4" type="video/mp4">動画を再生できない場合は、<a href="assets/video/rem-pv-20261022.mp4">MP4を開いてご覧ください</a>。</video>
       </div>
+      <p class="pv-note">2026.10.22 更新｜町での会話、移動、戦闘、連携技の最新ゲームプレイを収録。アニメーションはプロモーション用の映像です。</p>
       <div class="feats">
         <div class="ft fx"><p class="no">01</p><h3>海が消えた世界を、<br>3人で旅する物語</h3><p>干上がった海の底に生きる人々と、水を涸らす「厄災」。救助屋見習いの少年と仲間たちが、町に水を取り戻すため荒野を渡る、一本道の王道RPG。</p></div>
         <div class="ft fx"><p class="no">02</p><h3>仲間の力をつなぐ、<br>コマンドバトル</h3><p>撃つ・たたかう・技・道具。3人の役割を組み合わせ、連携技「結び断ち」や四本の糸の魔法で、厄災の弱いところを突く。</p></div>
@@ -732,7 +734,7 @@ section{padding:96px 0}
       <p class="place">海底の荒野</p>
       <div class="cta">
         <a class="btn" href="https://forms.apptalenthub.co.jp/contact?utm_source=rem-site&utm_medium=cta&utm_campaign=notify" target="_blank" rel="noopener">発売のお知らせを受け取る</a>
-        <a class="btn sub" href="https://www.youtube.com/watch?v=ypwtUdW6Gd4" target="_blank" rel="noopener">▶ YouTube で PV を見る</a>
+        <a class="btn sub" href="#pv">▶ 最新の PV を見る</a>
       </div>
       <p class="store-note"><b>Steam</b> ストアページは準備中。お知らせは、上のフォームから。</p>
     </div>
@@ -767,14 +769,8 @@ section{padding:96px 0}
 </footer>
 
 <script>
-// YouTube に PV を上げたら、動画の ID をここに入れる（例：'dQw4w9WgXcQ'）。空のあいだは「準備中」を出す
-const YOUTUBE_ID = 'ypwtUdW6Gd4';   // Rem PV（YouTube Studio：2026-10-20 アップロード。走る場面をいまのダッシュのポーズ・手ぶらのジンで撮り直した版）
+// 最新のPVはHTML videoで直接再生する。
 (function () {
-  if (YOUTUBE_ID) {
-    const box = document.getElementById('pvbox');
-    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + YOUTUBE_ID +
-      '?rel=0" title="Rem プロモーション映像" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-  }
   const nav = document.getElementById('nav');
   const btn = document.getElementById('menuBtn');
   const setOpen = o => { nav.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); btn.textContent = o ? '×' : '≡'; btn.setAttribute('aria-label', o ? 'メニューを閉じる' : 'メニューを開く'); };
