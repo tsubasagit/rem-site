@@ -284,6 +284,26 @@ section{padding:96px 0}
 .pl .kind,.char .role,.eyebrow,.store-note{font-size:.875rem}
 </style>
 <!-- /more:css -->
+<style>
+/* Promotional art collection */
+#artwork{scroll-margin-top:72px;background:radial-gradient(ellipse at 80% 10%,#17353480,transparent 55%),var(--bg2)}
+.art-intro{max-width:680px;color:var(--sub);margin-bottom:36px}
+.art-posters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.art-card{min-width:0}.art-card button{display:block;width:100%;padding:0;border:1px solid #52615b;background:#101a20;cursor:zoom-in;overflow:hidden}
+.art-card button:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+.art-card img{width:100%;height:auto;transition:transform .4s}.art-card button:hover img{transform:scale(1.025)}
+.art-card figcaption{padding:16px 0 24px}.art-card figcaption span{display:block;font-size:.8rem;letter-spacing:.16em;color:var(--teal)}
+.art-card h3{font-family:var(--mincho);font-size:1.3rem;margin:3px 0}.art-card p{font-size:.9rem;color:var(--sub)}
+.art-icons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.art-icons button{border-radius:50%;max-width:240px;margin:auto}.art-icons figcaption{text-align:center}
+.art-note{color:var(--sub);font-size:.85rem;margin-top:20px}
+#art-dialog{border:1px solid var(--line);background:var(--bg);color:var(--text);margin:auto;padding:20px;max-width:94vw;max-height:94dvh}
+#art-dialog::backdrop{background:#000d}#art-dialog img{max-height:75dvh;max-width:85vw;width:auto;margin:auto;object-fit:contain}
+.art-dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:14px}
+.art-close{font:inherit;background:var(--panel);border:1px solid var(--sub);color:var(--text);padding:6px 16px;cursor:pointer}
+@media(max-width:600px){.art-posters{grid-template-columns:1fr;gap:16px}.art-icons{gap:12px}.art-icons h3{font-size:1rem}.art-icons figcaption span{font-size:.65rem}}
+@media(prefers-reduced-motion:reduce){.art-card img{transition:none}}
+</style>
 </head>
 <body>
 
@@ -298,6 +318,7 @@ section{padding:96px 0}
     <li><a href="#story">物語</a></li>
     <li><a href="#places">舞台</a></li>
     <li><a href="#lore">もっと知る</a></li>
+    <li><a href="#artwork">アート</a></li>
     <li><a href="#about">概要</a></li>
     <li class="nav-cta-li"><a class="nav-cta" href="https://forms.apptalenthub.co.jp/contact?utm_source=rem-site&utm_medium=cta&utm_campaign=notify" target="_blank" rel="noopener">お知らせを受け取る</a></li>
   </ul>
@@ -662,6 +683,24 @@ section{padding:96px 0}
     </div>
   </section>
 
+  <section id="artwork" aria-labelledby="art-title">
+    <div class="wrap">
+      <p class="eyebrow">Art collection</p>
+      <h2 id="art-title">海のない世界に、想いを描く。</h2>
+      <p class="art-intro">果てしない海底の荒野。旅をともにする三人。人と世界をつなぐ、光の糸。<br>Rem の世界を描いた、新しいポスターとキャラクターアイコンです。画像を選ぶと、大きくご覧いただけます。</p>
+      <div class="art-posters">
+        <figure class="art-card"><button type="button" data-art="poster-journey" aria-label="ポスター「海底の旅路」を拡大"><img src="assets/art/poster-journey.webp" width="1024" height="1536" loading="lazy" alt="化石珊瑚のアーチと座礁船のあいだを、三人が歩く海底の荒野"></button><figcaption><span>POSTER / 01</span><h3>海底の旅路</h3><p>かつて海だった場所に、旅は続いていく。</p></figcaption></figure>
+        <figure class="art-card"><button type="button" data-art="poster-threads" aria-label="ポスター「想いをつなぐ糸」を拡大"><img src="assets/art/poster-threads.webp" width="1024" height="1536" loading="lazy" alt="夕暮れの海底の遺跡で、ジンとダリオに見守られながら光る糸を紡ぐノエル"></button><figcaption><span>POSTER / 02</span><h3>想いをつなぐ糸</h3><p>小さな光が、遠くの誰かへつながっている。</p></figcaption></figure>
+      </div>
+      <div class="art-icons">
+        <figure class="art-card"><button type="button" data-art="icon-jin" aria-label="ジンのアイコンを拡大"><img src="assets/art/icon-jin.webp" width="1024" height="1024" loading="lazy" alt="白いひと房と赤い救助隊の上着が印象的なジンの肖像"></button><figcaption><span>CHARACTER ICON</span><h3>ジン</h3></figcaption></figure>
+        <figure class="art-card"><button type="button" data-art="icon-noel" aria-label="ノエルのアイコンを拡大"><img src="assets/art/icon-noel.webp" width="1024" height="1024" loading="lazy" alt="緑の瞳と青緑のマント、光る糸をまとったノエルの肖像"></button><figcaption><span>CHARACTER ICON</span><h3>ノエル</h3></figcaption></figure>
+        <figure class="art-card"><button type="button" data-art="icon-dario" aria-label="ダリオのアイコンを拡大"><img src="assets/art/icon-dario.webp" width="1024" height="1024" loading="lazy" alt="黒髪を束ね、落ち着いた笑みを浮かべるダリオの肖像"></button><figcaption><span>CHARACTER ICON</span><h3>ダリオ</h3></figcaption></figure>
+      </div>
+      <p class="art-note">※ プロモーション用に制作したアートです。ゲーム画面ではありません。</p>
+    </div>
+  </section>
+
   <section id="about">
     <div class="wrap">
       <p class="eyebrow fx">About</p>
@@ -699,6 +738,21 @@ section{padding:96px 0}
     </div>
   </section>
 </main>
+<dialog id="art-dialog" aria-labelledby="art-dialog-title"><div class="art-dialog-bar"><p id="art-dialog-title"></p><button class="art-close" type="button" autofocus>閉じる ×</button></div><img alt=""></dialog>
+<script>
+(() => {
+  const dialog = document.getElementById('art-dialog');
+  document.querySelectorAll('[data-art]').forEach(button => button.addEventListener('click', () => {
+    const source = button.querySelector('img');
+    dialog.querySelector('img').src = 'assets/art/' + button.dataset.art + '.png';
+    dialog.querySelector('img').alt = source.alt;
+    document.getElementById('art-dialog-title').textContent = button.closest('figure').querySelector('h3').textContent;
+    dialog.showModal();
+  }));
+  dialog.querySelector('button').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+})();
+</script>
 
 <footer>
   <div class="wrap">
