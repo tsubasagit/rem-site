@@ -1,0 +1,5 @@
+# Keep superseded PVs in the repository without shipping them in the Pages build.
+exclude:
+  - assets/video/rem-pv-20261026-r7-1080.mp4
+  - assets/video/rem-pv-20261026-r8-1080.mp4
+  - assets/video/rem-pv-20261026-r9-1080.mp4
