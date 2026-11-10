@@ -1,5 +1,5 @@
 # Keep superseded PVs in the repository without shipping them in the Pages build.
-# Only the PV referenced by index.html is published (currently rem-pv-20261110-v35-1080.mp4).
+# Only the PV referenced by index.html is published (currently rem-pv-20261110-v35-web-1080.mp4).
 exclude:
   - assets/video/rem-pv-20261022.mp4
   - assets/video/rem-pv-20261026-r10-1080.mp4
@@ -19,3 +19,4 @@ exclude:
   - assets/video/rem-pv-20261103-r23-1080.mp4
   - assets/video/rem-pv-20261107-r24-1080.mp4
   - assets/video/rem-pv-20261108-v24-1080.mp4
+  - assets/video/rem-pv-20261110-v35-1080.mp4
